@@ -60,15 +60,15 @@ int main() {
 
     Foo foo;
     f = std::async( std::launch::async,
-                        &Foo::bar, foo, 4, 6);  // Task 4
-    foobar( 3, 7);                      // Task 3
-    f.get();                            // Wait for Task 4
+                    &Foo::bar, foo, 4, 6);  // Task 4
+    foobar( 3, 7);                          // Task 3
+    f.get();                                // Wait for Task 4
 
     // Defer Mode:
 
     f = std::async( std::launch::deferred, foobar, 5, 5);   // Task 5
     foobar( 6, 4);                                          // Task 6
-    printf( "final result is %d.\n", f.get());               // Do Task 5
+    printf( "final result is %d.\n", f.get());              // Do Task 5
 
     return 0;
 }
