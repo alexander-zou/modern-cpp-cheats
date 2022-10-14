@@ -58,8 +58,9 @@ int main() {
 
     // Async Mode ( with Object Method ):
 
+    Foo foo;
     f = std::async( std::launch::async,
-                        foobar, 4, 6);  // Task 4
+                        &Foo::bar, foo, 4, 6);  // Task 4
     foobar( 3, 7);                      // Task 3
     f.get();                            // Wait for Task 4
 
