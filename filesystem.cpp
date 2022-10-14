@@ -8,6 +8,10 @@
  * 
 **/
 
+#if __cplusplus < 201700
+#  error "C++17 or better is required"
+#endif
+
 #include <filesystem>
 
 #include <iostream>
